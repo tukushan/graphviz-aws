@@ -3,20 +3,21 @@
 # Download the AWS icons and conver them to a dot/graphviz friendly format
 ################
 
-ICONS_URL='http://media.amazonwebservices.com/architecturecenter/icons/AWS_Simple_Icons_svg_eps.zip'
-
+ICONS_URL='https://s3-us-west-2.amazonaws.com/awswebanddesign/Architecture+Icons/AWS-Arch-Icon-Sets_Feb-18/PNG%2C+SVG%2C+EPS_18.02.22.zip'
+ICONS_DIR=AWS-Arch-Icon-Sets_Feb-18
 
 echo -n "Downloading AWS Simple Icons    "
-if [ ! -f 'AWS_Simple_Icons_svg_eps.zip' ];then
-   wget $ICONS_URL > /dev/null
+if [ ! -f "$ICONS_DIR.zip" ];then
+   wget $ICONS_URL -O "$ICONS_DIR.zip" > /dev/null
    echo "[DONE]"
 else
    echo "[Skipped]"
 fi
 
 echo -n "Unzipping AWS Simple Icons    "
-if [ ! -d 'AWS_Simple_Icons_svg_eps' ];then
-   unzip AWS_Simple_Icons_svg_eps.zip > /dev/null
+if [ ! -d "$ICONS_DIR" ];then
+   unzip "$ICONS_DIR.zip" > /dev/null
+   mv "PNG, SVG, EPS" "$ICONS_DIR"
    echo "[DONE]"
 else
    echo "[Skipped]"
@@ -51,7 +52,7 @@ else
 fi
 
 TOTAL=0
-for SVG_FILE_ in $(find AWS_Simple_Icons_svg_eps -name \*svg | tr ' ' ':::' )
+for SVG_FILE_ in $(find "$ICONS_DIR" -name \*svg | tr ' ' ':::' )
 do
     SVG_FILE=$(echo $SVG_FILE_ |tr ':::' ' ')
     if [ ! -f "$SVG_FILE" ];then
@@ -64,8 +65,8 @@ do
 	echo -n "Converting '$SVG_FILE'   "
 	rsvg-convert "$SVG_FILE" -o "$PNG_FILE"
 	echo "[DONE]"
-    fi
     let TOTAL+=1
+    fi
 done
 
-echo "Images convereted: $TOTAL"
+echo "Images converted: $TOTAL"

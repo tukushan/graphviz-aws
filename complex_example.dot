@@ -1,20 +1,20 @@
 
 digraph G {
-    internet [shape=none, image="./AWS_Simple_Icons_svg_eps/Non-Service Specific/SVG/Non-Service Specific copy_Internet.png"];
-    aws  [shape=none, image="./AWS_Simple_Icons_svg_eps/Non-Service Specific/SVG/Non-Service Specific copy_ AWS Cloud.png"];
-    elb  [shape=none, image="./AWS_Simple_Icons_svg_eps/Compute & Networking/SVG/Compute & Networking copy_Elastic Load Balancing.png"];
-    web1 [shape=none, image="./AWS_Simple_Icons_svg_eps/Compute & Networking/SVG/Compute & Networking copy_Amazon EC2 Instance.png"];
-    web2 [shape=none, image="./AWS_Simple_Icons_svg_eps/Compute & Networking/SVG/Compute & Networking copy_Amazon EC2 Instance.png"];
-    app1 [shape=none, image="./AWS_Simple_Icons_svg_eps/Compute & Networking/SVG/Compute & Networking copy_Amazon EC2 Instance.png"];
-    app2 [shape=none, image="./AWS_Simple_Icons_svg_eps/Compute & Networking/SVG/Compute & Networking copy_Amazon EC2 Instance.png"];
-    db  [shape=none, image="./AWS_Simple_Icons_svg_eps/Database/SVG/Database copy_Amazon RDS MySQL DB Instance.png"];
-    db_slave  [shape=none, image="./AWS_Simple_Icons_svg_eps/Database/SVG/Database copy_Amazon RDS MySQL DB Instance.png"];
-    app1_ebs [shape=none, image="./AWS_Simple_Icons_svg_eps/Storage & Content Delivery/SVG/Storage & Content Delivery_Amazon EBS Volume.png"];
-    app1_ebs_snap [shape=none, image="./AWS_Simple_Icons_svg_eps/Storage & Content Delivery/SVG/Storage & Content Delivery_Amazon EBS Snapshot.png"];
-    app2_ebs [shape=none, image="./AWS_Simple_Icons_svg_eps/Storage & Content Delivery/SVG/Storage & Content Delivery_Amazon EBS Volume.png"];
-    app2_ebs_snap [shape=none, image="./AWS_Simple_Icons_svg_eps/Storage & Content Delivery/SVG/Storage & Content Delivery_Amazon EBS Snapshot.png"];
-    s3  [shape=none, image="./AWS_Simple_Icons_svg_eps/Storage & Content Delivery/SVG/Storage & Content Delivery_Amazon S3.png"];
-    gl  [shape=none, image="./AWS_Simple_Icons_svg_eps/Storage & Content Delivery/SVG/Storage & Content Delivery_Amazon Glacier.png"];
+    internet [shape=none, image="./AWS-Arch-Icon-Sets_Feb-18/General/General_Internet.png"];
+    aws  [shape=none, image="./AWS-Arch-Icon-Sets_Feb-18/General/General_AWScloud.png"];
+    elb  [shape=none, image="./AWS-Arch-Icon-Sets_Feb-18/Compute/Compute_ElasticLoadBalancing_ClassicLoadbalancer.png"];
+    web1 [shape=none, image="./AWS-Arch-Icon-Sets_Feb-18/Compute/Compute_AmazonEC2_instance.png"];
+    web2 [shape=none, image="./AWS-Arch-Icon-Sets_Feb-18/Compute/Compute_AmazonEC2_instance.png"];
+    app1 [shape=none, image="./AWS-Arch-Icon-Sets_Feb-18/Compute/Compute_AmazonEC2_instance.png"];
+    app2 [shape=none, image="./AWS-Arch-Icon-Sets_Feb-18/Compute/Compute_AmazonEC2_instance.png"];
+    db  [shape=none, image="./AWS-Arch-Icon-Sets_Feb-18/Database/Database_AmazonRDS_MySQLDBinstance.png"];
+    db_slave  [shape=none, image="./AWS-Arch-Icon-Sets_Feb-18/Database/Database_AmazonRDS_MySQLDBinstance.png"];
+    app1_ebs [shape=none, image="./AWS-Arch-Icon-Sets_Feb-18/Storage/Storage_Volume.png"];
+    app1_ebs_snap [shape=none, image="./AWS-Arch-Icon-Sets_Feb-18/Storage/Storage_Snapshot.png"];
+    app2_ebs [shape=none, image="./AWS-Arch-Icon-Sets_Feb-18/Storage/Storage_Volume.png"];
+    app2_ebs_snap [shape=none, image="./AWS-Arch-Icon-Sets_Feb-18/Storage/Storage_Snapshot.png"];
+    s3  [shape=none, image="./AWS-Arch-Icon-Sets_Feb-18/Storage/Storage_AmazonS3.png"];
+    gl  [shape=none, image="./AWS-Arch-Icon-Sets_Feb-18/Storage/Storage_AmazonGlacier.png"];
     
     subgraph cluster_a {
         web1 -> app1 [color="blue"];
