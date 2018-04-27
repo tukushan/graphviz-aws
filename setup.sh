@@ -70,3 +70,8 @@ do
 done
 
 echo "Images converted: $TOTAL"
+
+echo "Adding svg header"
+
+IFS=$'\n'; for x in `find "$ICONS_DIR" -iname "*.svg" -type f`; do cat header.svg ${x} > ${x}.tmp; mv ${x}.tmp ${x}; done
+
